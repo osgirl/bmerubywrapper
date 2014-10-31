@@ -3,8 +3,8 @@ require_relative 'bmexmlrpc'
 require 'xmlrpc/client' 
 
 #Variables used to login
-$userName = '<username>'; 
-$passWord = '<password>'; 
+$userName = '<USERNAME>'; 
+$passWord = '<PASSWORD>'; 
 $apiURL = 'http://api.benchmarkemail.com/1.0/';
 
 
@@ -79,7 +79,7 @@ def addContacts()
 	#First, we need to retrieve a list ID to add contacts to (for this example we'll get the latest ID)
 	$listID = getListID();
 	
-	puts "list Id we will add to: #{$listID}"
+	puts "list ID we will add to: #{$listID}"
 	
 	#Second, we need to prepare the information of contacts that will be added to the list 
 	#We will create an array that will hold contact's information 
@@ -105,9 +105,9 @@ def addContacts()
 	if($contactInfo.length == $contactsAdded)
 		puts "All #{$contactsAdded} contact(s) were added successfully!\n\n"
 	elsif($contactsAdded < 1)
-		puts "Looks like not all contacts were added! 0 of the #{$contactInfo.length} contact(s) were added.\n\n"
+		puts "Looks like not all contacts were added: 0 of #{$contactInfo.length} contact(s) were added.\n\n"
 	elsif($contactInfo.length > $contactsAdded)
-		puts "Looks like not all contacts were added! Only #{$contactsAdded} of the #{$contactInfo.length} contact(s) were added.\n\n"
+		puts "Looks like not all contacts were added: Only #{$contactsAdded} of #{$contactInfo.length} contact(s) were added.\n\n"
 	end
 end
 
